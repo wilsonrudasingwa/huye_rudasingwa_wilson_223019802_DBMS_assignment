@@ -1,0 +1,253 @@
+MariaDB [(none)]> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| bit                |
+| huye2              |
+| information_schema |
+| mysql              |
+| newstudent         |
+| performance_schema |
+| phpmyadmin         |
+| ruhande            |
+| test               |
+| wilsonnew          |
++--------------------+
+10 rows in set (0.003 sec)
+
+MariaDB [(none)]> create database ruhandee;
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [(none)]> create table NGOMA(ID INT(16) PRIMARY KEY , F_NAME CHAR(20), L_NAME CHAR(20), GENDER CHAR(6), PROVINCE CHAR(15), DISTRICT CHAR(15), SECTOR CHAR(15), CELL CHAR(15), EMAIL CHAR(30), PHONE CHAR(13) );
+ERROR 1046 (3D000): No database selected
+MariaDB [(none)]> USE RUHANDEE;
+Database changed
+MariaDB [RUHANDEE]> create table NGOMA(ID INT(16) PRIMARY KEY , F_NAME CHAR(20), L_NAME CHAR(20), GENDER CHAR(6), PROVINCE CHAR(15), DISTRICT CHAR(15), SECTOR CHAR(15), CELL CHAR(15), EMAIL CHAR(30), PHONE CHAR(13) );
+Query OK, 0 rows affected (0.044 sec)
+
+MariaDB [RUHANDEE]> SELECT * FROM NGOMA;
+Empty set (0.003 sec)
+
+MariaDB [RUHANDEE]> INSERT INTO `ngoma` (`ID`, `F_NAME`, `L_NAME`, `GENDER`, `PROVINCE`, `DISTRICT`, `SECTOR`, `CELL`, `EMAIL`, `PHONE`) VALUES
+    -> (186478, 'EDDY', 'KARUGABA', 'MALE', 'EAST', 'GATSIBO', 'MUHURA', 'GASANZE', 'KARUGABA@GMAIL.COM', '0789279696'),
+    -> (2345532, 'SHAN', 'UWERA', 'FEMALE', 'EAST', 'KAYONZA', 'RUKARA', 'KARUBAMBA', 'UWERA@GMAIL.COM', '07854632466'),
+    -> (5866535, 'MODESTE', 'MUHIRE', 'MALE', 'EAST', 'KIREHE', 'KIGINA', 'RUHANGA', 'MUHIRE@GMAIL.COM', '07894576343'),
+    -> (6254624, 'ELISA', 'MUGABO', 'MALE', 'EAST', 'KAYONZA', 'GAHINI', 'URUGARAMA', 'MUGABO@GMAIL.COM', '0789273755'),
+    -> (6876567, 'GRACE', 'MUNEZERO', 'FEMALE', 'EAST', 'KIREHE', 'BUKORA', 'NYAMUGARI', 'GRACE@GMAIL.COM', '0789278966'),
+    -> (46789908, 'DARIA', 'MUTONI', 'FEMALE', 'WEST', 'RUSIZI', 'KAMEMBE', 'BUGARAMA', 'MUTONI@GMAIL.COM', '0785678733'),
+    -> (56678785, 'JEAN', 'KALISA', 'MALE', 'SOUTH', 'HUYE', 'NGOMA', 'RUHANDE', 'KALISA@GMAIL.COM', '0789654377'),
+    -> (67557875, 'JULIUS', 'KAZUNGU', 'MALE', 'EAST', 'KIREHE', 'KIGINA', 'RWANTERU', 'JULIUS@GMAIL.COM', '0781962026'),
+    -> (78654456, 'FIDELE', 'MUSABIKA', 'MALE', 'NORTH', 'BURERA', 'KIDAHO', 'NGARAMA', 'FIDELE@GMAIL.COM', '0788567699'),
+    -> (87654546, 'KENNY', 'RWIGAMBA', 'MALE', 'NORTH', 'HUYE', 'TUMBA', 'TUMBA', 'KENNY@GMAIL.COM', '0789567599'),
+    -> (2147483647, 'WILSON', 'RUDASINGWA', 'MALE', 'EAST', 'KAYONZA', 'RUKARA', 'KARUBAMBA', 'WILSONRUDASINGWA@GMAIL.COM', '07892739
+44');
+Query OK, 11 rows affected (0.016 sec)
+Records: 11  Duplicates: 0  Warnings: 0
+
+MariaDB [RUHANDEE]> SELECT * FROM NGOMA;
++------------+---------+------------+--------+----------+----------+---------+-----------+----------------------------+-------------+
+| ID         | F_NAME  | L_NAME     | GENDER | PROVINCE | DISTRICT | SECTOR  | CELL      | EMAIL                      | PHONE       |
++------------+---------+------------+--------+----------+----------+---------+-----------+----------------------------+-------------+
+|     186478 | EDDY    | KARUGABA   | MALE   | EAST     | GATSIBO  | MUHURA  | GASANZE   | KARUGABA@GMAIL.COM         | 0789279696  |
+|    2345532 | SHAN    | UWERA      | FEMALE | EAST     | KAYONZA  | RUKARA  | KARUBAMBA | UWERA@GMAIL.COM            | 07854632466 |
+|    5866535 | MODESTE | MUHIRE     | MALE   | EAST     | KIREHE   | KIGINA  | RUHANGA   | MUHIRE@GMAIL.COM           | 07894576343 |
+|    6254624 | ELISA   | MUGABO     | MALE   | EAST     | KAYONZA  | GAHINI  | URUGARAMA | MUGABO@GMAIL.COM           | 0789273755  |
+|    6876567 | GRACE   | MUNEZERO   | FEMALE | EAST     | KIREHE   | BUKORA  | NYAMUGARI | GRACE@GMAIL.COM            | 0789278966  |
+|   46789908 | DARIA   | MUTONI     | FEMALE | WEST     | RUSIZI   | KAMEMBE | BUGARAMA  | MUTONI@GMAIL.COM           | 0785678733  |
+|   56678785 | JEAN    | KALISA     | MALE   | SOUTH    | HUYE     | NGOMA   | RUHANDE   | KALISA@GMAIL.COM           | 0789654377  |
+|   67557875 | JULIUS  | KAZUNGU    | MALE   | EAST     | KIREHE   | KIGINA  | RWANTERU  | JULIUS@GMAIL.COM           | 0781962026  |
+|   78654456 | FIDELE  | MUSABIKA   | MALE   | NORTH    | BURERA   | KIDAHO  | NGARAMA   | FIDELE@GMAIL.COM           | 0788567699  |
+|   87654546 | KENNY   | RWIGAMBA   | MALE   | NORTH    | HUYE     | TUMBA   | TUMBA     | KENNY@GMAIL.COM            | 0789567599  |
+| 2147483647 | WILSON  | RUDASINGWA | MALE   | EAST     | KAYONZA  | RUKARA  | KARUBAMBA | WILSONRUDASINGWA@GMAIL.COM | 0789273944  |
++------------+---------+------------+--------+----------+----------+---------+-----------+----------------------------+-------------+
+11 rows in set (0.001 sec)
+
+MariaDB [RUHANDEE]> ALTER TABLE NGOMA
+    -> ADD COLUMN MARTIAL_STATUS CHAR(14);
+Query OK, 0 rows affected (0.021 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [RUHANDEE]> SELECT * FROM NGOMA;
++------------+---------+------------+--------+----------+----------+---------+-----------+----------------------------+-------------+----------------+
+| ID         | F_NAME  | L_NAME     | GENDER | PROVINCE | DISTRICT | SECTOR  | CELL      | EMAIL                      | PHONE       | MARTIAL_STATUS |
++------------+---------+------------+--------+----------+----------+---------+-----------+----------------------------+-------------+----------------+
+|     186478 | EDDY    | KARUGABA   | MALE   | EAST     | GATSIBO  | MUHURA  | GASANZE   | KARUGABA@GMAIL.COM         | 0789279696  | NULL           |
+|    2345532 | SHAN    | UWERA      | FEMALE | EAST     | KAYONZA  | RUKARA  | KARUBAMBA | UWERA@GMAIL.COM            | 07854632466 | NULL           |
+|    5866535 | MODESTE | MUHIRE     | MALE   | EAST     | KIREHE   | KIGINA  | RUHANGA   | MUHIRE@GMAIL.COM           | 07894576343 | NULL           |
+|    6254624 | ELISA   | MUGABO     | MALE   | EAST     | KAYONZA  | GAHINI  | URUGARAMA | MUGABO@GMAIL.COM           | 0789273755  | NULL           |
+|    6876567 | GRACE   | MUNEZERO   | FEMALE | EAST     | KIREHE   | BUKORA  | NYAMUGARI | GRACE@GMAIL.COM            | 0789278966  | NULL           |
+|   46789908 | DARIA   | MUTONI     | FEMALE | WEST     | RUSIZI   | KAMEMBE | BUGARAMA  | MUTONI@GMAIL.COM           | 0785678733  | NULL           |
+|   56678785 | JEAN    | KALISA     | MALE   | SOUTH    | HUYE     | NGOMA   | RUHANDE   | KALISA@GMAIL.COM           | 0789654377  | NULL           |
+|   67557875 | JULIUS  | KAZUNGU    | MALE   | EAST     | KIREHE   | KIGINA  | RWANTERU  | JULIUS@GMAIL.COM           | 0781962026  | NULL           |
+|   78654456 | FIDELE  | MUSABIKA   | MALE   | NORTH    | BURERA   | KIDAHO  | NGARAMA   | FIDELE@GMAIL.COM           | 0788567699  | NULL           |
+|   87654546 | KENNY   | RWIGAMBA   | MALE   | NORTH    | HUYE     | TUMBA   | TUMBA     | KENNY@GMAIL.COM            | 0789567599  | NULL           |
+| 2147483647 | WILSON  | RUDASINGWA | MALE   | EAST     | KAYONZA  | RUKARA  | KARUBAMBA | WILSONRUDASINGWA@GMAIL.COM | 0789273944  | NULL           |
++------------+---------+------------+--------+----------+----------+---------+-----------+----------------------------+-------------+----------------+
+11 rows in set (0.001 sec)
+
+MariaDB [RUHANDEE]> ALTER TABLE DROP COLUMN MARTIAL_STATUS;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DROP COLUMN MARTIAL_STATUS' at line 1
+MariaDB [RUHANDEE]> ALTER TABLE NGOMA DROP COLUMN MARTIAL_STATUS;
+Query OK, 0 rows affected (0.020 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [RUHANDEE]> SELECT * FROM NGOMA;
++------------+---------+------------+--------+----------+----------+---------+-----------+----------------------------+-------------+
+| ID         | F_NAME  | L_NAME     | GENDER | PROVINCE | DISTRICT | SECTOR  | CELL      | EMAIL                      | PHONE       |
++------------+---------+------------+--------+----------+----------+---------+-----------+----------------------------+-------------+
+|     186478 | EDDY    | KARUGABA   | MALE   | EAST     | GATSIBO  | MUHURA  | GASANZE   | KARUGABA@GMAIL.COM         | 0789279696  |
+|    2345532 | SHAN    | UWERA      | FEMALE | EAST     | KAYONZA  | RUKARA  | KARUBAMBA | UWERA@GMAIL.COM            | 07854632466 |
+|    5866535 | MODESTE | MUHIRE     | MALE   | EAST     | KIREHE   | KIGINA  | RUHANGA   | MUHIRE@GMAIL.COM           | 07894576343 |
+|    6254624 | ELISA   | MUGABO     | MALE   | EAST     | KAYONZA  | GAHINI  | URUGARAMA | MUGABO@GMAIL.COM           | 0789273755  |
+|    6876567 | GRACE   | MUNEZERO   | FEMALE | EAST     | KIREHE   | BUKORA  | NYAMUGARI | GRACE@GMAIL.COM            | 0789278966  |
+|   46789908 | DARIA   | MUTONI     | FEMALE | WEST     | RUSIZI   | KAMEMBE | BUGARAMA  | MUTONI@GMAIL.COM           | 0785678733  |
+|   56678785 | JEAN    | KALISA     | MALE   | SOUTH    | HUYE     | NGOMA   | RUHANDE   | KALISA@GMAIL.COM           | 0789654377  |
+|   67557875 | JULIUS  | KAZUNGU    | MALE   | EAST     | KIREHE   | KIGINA  | RWANTERU  | JULIUS@GMAIL.COM           | 0781962026  |
+|   78654456 | FIDELE  | MUSABIKA   | MALE   | NORTH    | BURERA   | KIDAHO  | NGARAMA   | FIDELE@GMAIL.COM           | 0788567699  |
+|   87654546 | KENNY   | RWIGAMBA   | MALE   | NORTH    | HUYE     | TUMBA   | TUMBA     | KENNY@GMAIL.COM            | 0789567599  |
+| 2147483647 | WILSON  | RUDASINGWA | MALE   | EAST     | KAYONZA  | RUKARA  | KARUBAMBA | WILSONRUDASINGWA@GMAIL.COM | 0789273944  |
++------------+---------+------------+--------+----------+----------+---------+-----------+----------------------------+-------------+
+11 rows in set (0.001 sec)
+
+MariaDB [RUHANDEE]> UPDATE NGOMA SET PROVINCE="EASTERN PROVINCE" WHERE PROVINCE="EAST";
+Query OK, 7 rows affected, 7 warnings (0.016 sec)
+Rows matched: 7  Changed: 7  Warnings: 7
+
+MariaDB [RUHANDEE]> SELECT * FROM NGOMA;
++------------+---------+------------+--------+-----------------+----------+---------+-----------+----------------------------+-------------+
+| ID         | F_NAME  | L_NAME     | GENDER | PROVINCE        | DISTRICT | SECTOR  | CELL      | EMAIL                      | PHONE       |
++------------+---------+------------+--------+-----------------+----------+---------+-----------+----------------------------+-------------+
+|     186478 | EDDY    | KARUGABA   | MALE   | EASTERN PROVINC | GATSIBO  | MUHURA  | GASANZE   | KARUGABA@GMAIL.COM         | 0789279696  |
+|    2345532 | SHAN    | UWERA      | FEMALE | EASTERN PROVINC | KAYONZA  | RUKARA  | KARUBAMBA | UWERA@GMAIL.COM            | 07854632466 |
+|    5866535 | MODESTE | MUHIRE     | MALE   | EASTERN PROVINC | KIREHE   | KIGINA  | RUHANGA   | MUHIRE@GMAIL.COM           | 07894576343 |
+|    6254624 | ELISA   | MUGABO     | MALE   | EASTERN PROVINC | KAYONZA  | GAHINI  | URUGARAMA | MUGABO@GMAIL.COM           | 0789273755  |
+|    6876567 | GRACE   | MUNEZERO   | FEMALE | EASTERN PROVINC | KIREHE   | BUKORA  | NYAMUGARI | GRACE@GMAIL.COM            | 0789278966  |
+|   46789908 | DARIA   | MUTONI     | FEMALE | WEST            | RUSIZI   | KAMEMBE | BUGARAMA  | MUTONI@GMAIL.COM           | 0785678733  |
+|   56678785 | JEAN    | KALISA     | MALE   | SOUTH           | HUYE     | NGOMA   | RUHANDE   | KALISA@GMAIL.COM           | 0789654377  |
+|   67557875 | JULIUS  | KAZUNGU    | MALE   | EASTERN PROVINC | KIREHE   | KIGINA  | RWANTERU  | JULIUS@GMAIL.COM           | 0781962026  |
+|   78654456 | FIDELE  | MUSABIKA   | MALE   | NORTH           | BURERA   | KIDAHO  | NGARAMA   | FIDELE@GMAIL.COM           | 0788567699  |
+|   87654546 | KENNY   | RWIGAMBA   | MALE   | NORTH           | HUYE     | TUMBA   | TUMBA     | KENNY@GMAIL.COM            | 0789567599  |
+| 2147483647 | WILSON  | RUDASINGWA | MALE   | EASTERN PROVINC | KAYONZA  | RUKARA  | KARUBAMBA | WILSONRUDASINGWA@GMAIL.COM | 0789273944  |
++------------+---------+------------+--------+-----------------+----------+---------+-----------+----------------------------+-------------+
+11 rows in set (0.001 sec)
+
+MariaDB [RUHANDEE]> UPDATE NGOMA SET PROVINCE="EAST" WHERE PROVINCE="EASTERN PROVINCE";
+Query OK, 0 rows affected (0.001 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+MariaDB [RUHANDEE]> SELECT * FROM NGOMA;
++------------+---------+------------+--------+-----------------+----------+---------+-----------+----------------------------+-------------+
+| ID         | F_NAME  | L_NAME     | GENDER | PROVINCE        | DISTRICT | SECTOR  | CELL      | EMAIL                      | PHONE       |
++------------+---------+------------+--------+-----------------+----------+---------+-----------+----------------------------+-------------+
+|     186478 | EDDY    | KARUGABA   | MALE   | EASTERN PROVINC | GATSIBO  | MUHURA  | GASANZE   | KARUGABA@GMAIL.COM         | 0789279696  |
+|    2345532 | SHAN    | UWERA      | FEMALE | EASTERN PROVINC | KAYONZA  | RUKARA  | KARUBAMBA | UWERA@GMAIL.COM            | 07854632466 |
+|    5866535 | MODESTE | MUHIRE     | MALE   | EASTERN PROVINC | KIREHE   | KIGINA  | RUHANGA   | MUHIRE@GMAIL.COM           | 07894576343 |
+|    6254624 | ELISA   | MUGABO     | MALE   | EASTERN PROVINC | KAYONZA  | GAHINI  | URUGARAMA | MUGABO@GMAIL.COM           | 0789273755  |
+|    6876567 | GRACE   | MUNEZERO   | FEMALE | EASTERN PROVINC | KIREHE   | BUKORA  | NYAMUGARI | GRACE@GMAIL.COM            | 0789278966  |
+|   46789908 | DARIA   | MUTONI     | FEMALE | WEST            | RUSIZI   | KAMEMBE | BUGARAMA  | MUTONI@GMAIL.COM           | 0785678733  |
+|   56678785 | JEAN    | KALISA     | MALE   | SOUTH           | HUYE     | NGOMA   | RUHANDE   | KALISA@GMAIL.COM           | 0789654377  |
+|   67557875 | JULIUS  | KAZUNGU    | MALE   | EASTERN PROVINC | KIREHE   | KIGINA  | RWANTERU  | JULIUS@GMAIL.COM           | 0781962026  |
+|   78654456 | FIDELE  | MUSABIKA   | MALE   | NORTH           | BURERA   | KIDAHO  | NGARAMA   | FIDELE@GMAIL.COM           | 0788567699  |
+|   87654546 | KENNY   | RWIGAMBA   | MALE   | NORTH           | HUYE     | TUMBA   | TUMBA     | KENNY@GMAIL.COM            | 0789567599  |
+| 2147483647 | WILSON  | RUDASINGWA | MALE   | EASTERN PROVINC | KAYONZA  | RUKARA  | KARUBAMBA | WILSONRUDASINGWA@GMAIL.COM | 0789273944  |
++------------+---------+------------+--------+-----------------+----------+---------+-----------+----------------------------+-------------+
+11 rows in set (0.001 sec)
+
+MariaDB [RUHANDEE]> UPDATE NGOMA SET PROVINCE="EASTERN PROVINC" WHERE PROVINCE="EAST";
+Query OK, 0 rows affected (0.001 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+MariaDB [RUHANDEE]> SELECT * FROM NGOMA;
++------------+---------+------------+--------+-----------------+----------+---------+-----------+----------------------------+-------------+
+| ID         | F_NAME  | L_NAME     | GENDER | PROVINCE        | DISTRICT | SECTOR  | CELL      | EMAIL                      | PHONE       |
++------------+---------+------------+--------+-----------------+----------+---------+-----------+----------------------------+-------------+
+|     186478 | EDDY    | KARUGABA   | MALE   | EASTERN PROVINC | GATSIBO  | MUHURA  | GASANZE   | KARUGABA@GMAIL.COM         | 0789279696  |
+|    2345532 | SHAN    | UWERA      | FEMALE | EASTERN PROVINC | KAYONZA  | RUKARA  | KARUBAMBA | UWERA@GMAIL.COM            | 07854632466 |
+|    5866535 | MODESTE | MUHIRE     | MALE   | EASTERN PROVINC | KIREHE   | KIGINA  | RUHANGA   | MUHIRE@GMAIL.COM           | 07894576343 |
+|    6254624 | ELISA   | MUGABO     | MALE   | EASTERN PROVINC | KAYONZA  | GAHINI  | URUGARAMA | MUGABO@GMAIL.COM           | 0789273755  |
+|    6876567 | GRACE   | MUNEZERO   | FEMALE | EASTERN PROVINC | KIREHE   | BUKORA  | NYAMUGARI | GRACE@GMAIL.COM            | 0789278966  |
+|   46789908 | DARIA   | MUTONI     | FEMALE | WEST            | RUSIZI   | KAMEMBE | BUGARAMA  | MUTONI@GMAIL.COM           | 0785678733  |
+|   56678785 | JEAN    | KALISA     | MALE   | SOUTH           | HUYE     | NGOMA   | RUHANDE   | KALISA@GMAIL.COM           | 0789654377  |
+|   67557875 | JULIUS  | KAZUNGU    | MALE   | EASTERN PROVINC | KIREHE   | KIGINA  | RWANTERU  | JULIUS@GMAIL.COM           | 0781962026  |
+|   78654456 | FIDELE  | MUSABIKA   | MALE   | NORTH           | BURERA   | KIDAHO  | NGARAMA   | FIDELE@GMAIL.COM           | 0788567699  |
+|   87654546 | KENNY   | RWIGAMBA   | MALE   | NORTH           | HUYE     | TUMBA   | TUMBA     | KENNY@GMAIL.COM            | 0789567599  |
+| 2147483647 | WILSON  | RUDASINGWA | MALE   | EASTERN PROVINC | KAYONZA  | RUKARA  | KARUBAMBA | WILSONRUDASINGWA@GMAIL.COM | 0789273944  |
++------------+---------+------------+--------+-----------------+----------+---------+-----------+----------------------------+-------------+
+11 rows in set (0.001 sec)
+
+MariaDB [RUHANDEE]> UPDATE NGOMA SET PROVINCE="EAST" WHERE PROVINCE="EASTERN PROVINC";
+Query OK, 7 rows affected (0.015 sec)
+Rows matched: 7  Changed: 7  Warnings: 0
+
+MariaDB [RUHANDEE]> SELECT * FROM NGOMA;
++------------+---------+------------+--------+----------+----------+---------+-----------+----------------------------+-------------+
+| ID         | F_NAME  | L_NAME     | GENDER | PROVINCE | DISTRICT | SECTOR  | CELL      | EMAIL                      | PHONE       |
++------------+---------+------------+--------+----------+----------+---------+-----------+----------------------------+-------------+
+|     186478 | EDDY    | KARUGABA   | MALE   | EAST     | GATSIBO  | MUHURA  | GASANZE   | KARUGABA@GMAIL.COM         | 0789279696  |
+|    2345532 | SHAN    | UWERA      | FEMALE | EAST     | KAYONZA  | RUKARA  | KARUBAMBA | UWERA@GMAIL.COM            | 07854632466 |
+|    5866535 | MODESTE | MUHIRE     | MALE   | EAST     | KIREHE   | KIGINA  | RUHANGA   | MUHIRE@GMAIL.COM           | 07894576343 |
+|    6254624 | ELISA   | MUGABO     | MALE   | EAST     | KAYONZA  | GAHINI  | URUGARAMA | MUGABO@GMAIL.COM           | 0789273755  |
+|    6876567 | GRACE   | MUNEZERO   | FEMALE | EAST     | KIREHE   | BUKORA  | NYAMUGARI | GRACE@GMAIL.COM            | 0789278966  |
+|   46789908 | DARIA   | MUTONI     | FEMALE | WEST     | RUSIZI   | KAMEMBE | BUGARAMA  | MUTONI@GMAIL.COM           | 0785678733  |
+|   56678785 | JEAN    | KALISA     | MALE   | SOUTH    | HUYE     | NGOMA   | RUHANDE   | KALISA@GMAIL.COM           | 0789654377  |
+|   67557875 | JULIUS  | KAZUNGU    | MALE   | EAST     | KIREHE   | KIGINA  | RWANTERU  | JULIUS@GMAIL.COM           | 0781962026  |
+|   78654456 | FIDELE  | MUSABIKA   | MALE   | NORTH    | BURERA   | KIDAHO  | NGARAMA   | FIDELE@GMAIL.COM           | 0788567699  |
+|   87654546 | KENNY   | RWIGAMBA   | MALE   | NORTH    | HUYE     | TUMBA   | TUMBA     | KENNY@GMAIL.COM            | 0789567599  |
+| 2147483647 | WILSON  | RUDASINGWA | MALE   | EAST     | KAYONZA  | RUKARA  | KARUBAMBA | WILSONRUDASINGWA@GMAIL.COM | 0789273944  |
++------------+---------+------------+--------+----------+----------+---------+-----------+----------------------------+-------------+
+11 rows in set (0.000 sec)
+
+MariaDB [RUHANDEE]> DELETE FROM NGOMA WHERE F_NAME="JULIUS" OR F_NAME="WILSON";
+Query OK, 2 rows affected (0.016 sec)
+
+MariaDB [RUHANDEE]> SELECT * FROM NGOMA;
++----------+---------+----------+--------+----------+----------+---------+-----------+--------------------+-------------+
+| ID       | F_NAME  | L_NAME   | GENDER | PROVINCE | DISTRICT | SECTOR  | CELL      | EMAIL              | PHONE       |
++----------+---------+----------+--------+----------+----------+---------+-----------+--------------------+-------------+
+|   186478 | EDDY    | KARUGABA | MALE   | EAST     | GATSIBO  | MUHURA  | GASANZE   | KARUGABA@GMAIL.COM | 0789279696  |
+|  2345532 | SHAN    | UWERA    | FEMALE | EAST     | KAYONZA  | RUKARA  | KARUBAMBA | UWERA@GMAIL.COM    | 07854632466 |
+|  5866535 | MODESTE | MUHIRE   | MALE   | EAST     | KIREHE   | KIGINA  | RUHANGA   | MUHIRE@GMAIL.COM   | 07894576343 |
+|  6254624 | ELISA   | MUGABO   | MALE   | EAST     | KAYONZA  | GAHINI  | URUGARAMA | MUGABO@GMAIL.COM   | 0789273755  |
+|  6876567 | GRACE   | MUNEZERO | FEMALE | EAST     | KIREHE   | BUKORA  | NYAMUGARI | GRACE@GMAIL.COM    | 0789278966  |
+| 46789908 | DARIA   | MUTONI   | FEMALE | WEST     | RUSIZI   | KAMEMBE | BUGARAMA  | MUTONI@GMAIL.COM   | 0785678733  |
+| 56678785 | JEAN    | KALISA   | MALE   | SOUTH    | HUYE     | NGOMA   | RUHANDE   | KALISA@GMAIL.COM   | 0789654377  |
+| 78654456 | FIDELE  | MUSABIKA | MALE   | NORTH    | BURERA   | KIDAHO  | NGARAMA   | FIDELE@GMAIL.COM   | 0788567699  |
+| 87654546 | KENNY   | RWIGAMBA | MALE   | NORTH    | HUYE     | TUMBA   | TUMBA     | KENNY@GMAIL.COM    | 0789567599  |
++----------+---------+----------+--------+----------+----------+---------+-----------+--------------------+-------------+
+9 rows in set (0.001 sec)
+
+MariaDB [RUHANDEE]> DELETE FROM NGOMA WHERE F_NAME="GRACE" AND L_NAME="MUNEZERO";
+Query OK, 1 row affected (0.016 sec)
+
+MariaDB [RUHANDEE]> SELECT * FROM NGOMA;
++----------+---------+----------+--------+----------+----------+---------+-----------+--------------------+-------------+
+| ID       | F_NAME  | L_NAME   | GENDER | PROVINCE | DISTRICT | SECTOR  | CELL      | EMAIL              | PHONE       |
++----------+---------+----------+--------+----------+----------+---------+-----------+--------------------+-------------+
+|   186478 | EDDY    | KARUGABA | MALE   | EAST     | GATSIBO  | MUHURA  | GASANZE   | KARUGABA@GMAIL.COM | 0789279696  |
+|  2345532 | SHAN    | UWERA    | FEMALE | EAST     | KAYONZA  | RUKARA  | KARUBAMBA | UWERA@GMAIL.COM    | 07854632466 |
+|  5866535 | MODESTE | MUHIRE   | MALE   | EAST     | KIREHE   | KIGINA  | RUHANGA   | MUHIRE@GMAIL.COM   | 07894576343 |
+|  6254624 | ELISA   | MUGABO   | MALE   | EAST     | KAYONZA  | GAHINI  | URUGARAMA | MUGABO@GMAIL.COM   | 0789273755  |
+| 46789908 | DARIA   | MUTONI   | FEMALE | WEST     | RUSIZI   | KAMEMBE | BUGARAMA  | MUTONI@GMAIL.COM   | 0785678733  |
+| 56678785 | JEAN    | KALISA   | MALE   | SOUTH    | HUYE     | NGOMA   | RUHANDE   | KALISA@GMAIL.COM   | 0789654377  |
+| 78654456 | FIDELE  | MUSABIKA | MALE   | NORTH    | BURERA   | KIDAHO  | NGARAMA   | FIDELE@GMAIL.COM   | 0788567699  |
+| 87654546 | KENNY   | RWIGAMBA | MALE   | NORTH    | HUYE     | TUMBA   | TUMBA     | KENNY@GMAIL.COM    | 0789567599  |
++----------+---------+----------+--------+----------+----------+---------+-----------+--------------------+-------------+
+8 rows in set (0.001 sec)
+
+MariaDB [RUHANDEE]> SELECT F_NAME,L_NAME FROM NGOMA;
++---------+----------+
+| F_NAME  | L_NAME   |
++---------+----------+
+| EDDY    | KARUGABA |
+| SHAN    | UWERA    |
+| MODESTE | MUHIRE   |
+| ELISA   | MUGABO   |
+| DARIA   | MUTONI   |
+| JEAN    | KALISA   |
+| FIDELE  | MUSABIKA |
+| KENNY   | RWIGAMBA |
++---------+----------+
+8 rows in set (0.001 sec)
+
+MariaDB [RUHANDEE]>
